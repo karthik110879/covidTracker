@@ -1,0 +1,33 @@
+.c1{
+    background-color: #EAABFF;
+}
+.c2{
+    background-color: #A3F1E4;
+}
+.c3{
+    background-color: #ADF890;
+}
+.c4{
+    background-color: #F8C090;
+}
+
+
+
+
+
+@media only screen and (min-width: 300px) {
+    /* For tablets: */
+    .row{
+        margin-left:auto;
+        margin-right:auto;
+        height:auto; 
+        width:auto;
+    }
+    .card{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        float: left;
+   }
+  }

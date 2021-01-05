@@ -1,0 +1,23 @@
+.footer{
+    background-color: #50505E;
+    color: white;
+    height: auto;
+
+}
+
+.apicredits{
+    color: whitesmoke;
+    
+}
+.apicredits:hover{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.clma{
+    float: left;
+}
+
+.clmb{
+    float: right;
+}
