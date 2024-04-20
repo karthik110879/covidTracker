@@ -36,7 +36,7 @@ export class DataServiceService {
     //   year: this.year 
     // });
     
-    this.globalDataUrl = `${this.baseUrl}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`
+    this.globalDataUrl = `${this.baseUrl}${'02-23-2023'}${this.extension}`
     console.log(this.globalDataUrl);
      
 
@@ -46,11 +46,12 @@ export class DataServiceService {
     if(error.status == 404 ){
       let now = new Date();
       now.setDate(now.getDate() - 1);
-      now.setHours(-1);
+      now.setHours(-1); 
       this.month = now.getMonth();
       this.date = now.getDate();
       this.year = now.getFullYear();
-      this.globalDataUrl = `${this.baseUrl}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
+      // this.globalDataUrl = `${this.baseUrl}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
+      this.globalDataUrl = `${this.baseUrl}${'02'}-${'23'}-${'2023'}${this.extension}`;
       return this.getGlobalData();
     }
   }
@@ -96,6 +97,8 @@ export class DataServiceService {
     return this.http.get(this.globalDataUrl, {responseType: 'text'}).pipe(
       map((result)=>{
         //let data: globalDataSummary[] = [];
+        console.log('result', result);
+        
         let raw = {};
         let rows = result.split('\n');
         rows.splice(0,1);

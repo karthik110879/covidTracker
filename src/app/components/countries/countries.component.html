@@ -32,7 +32,7 @@
                 <tbody>
                     <tr *ngFor="let cs of selectedCountryData; index as i">
                         <td>{{ i +1}}</td>
-                        <td>{{cs.date | date}}</td>
+                        <td>{{cs.date | date:'mediumDate'}}</td>
                         <td>{{ cs.cases }}</td>
                     </tr>
                 </tbody>
