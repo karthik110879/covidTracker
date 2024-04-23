@@ -11,7 +11,9 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
 import { GoogleChartsModule } from 'angular-google-charts';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DecimalPipe } from '@angular/common';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -24,14 +26,15 @@ import { FooterComponent } from './components/footer/footer.component';
     FeedbackComponent,
     FooterComponent
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleChartsModule
-    
+    GoogleChartsModule,   
   ],
-  providers: [],
+  providers: [
+    DecimalPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

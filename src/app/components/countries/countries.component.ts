@@ -46,27 +46,27 @@ export class CountriesComponent implements OnInit {
   constructor(private service : DataServiceService) { }
 
   ngOnInit(): void {
-
-    merge(
-      this.service.getDatwWiseData().pipe(
-        map(result=>{
-          this.dateWiseData = result;
-        })
-      ), 
-      this.service.getGlobalData().pipe(map(result=>{
-        this.data = result;
-        this.data.forEach(cs=>{
-          this.countries.push(cs.country)
-        })
-      }))
-    ).subscribe(
-      {
-        complete : ()=>{
-         this.updateValues('Afghanistan')
-         this.loading = false;
-        }
-      }
-    )
+    this.loading = false
+    // merge(
+    //   this.service.getDatwWiseData().pipe(
+    //     map(result=>{
+    //       this.dateWiseData = result;
+    //     })
+    //   ), 
+    //   this.service.getGlobalData().pipe(map(result=>{
+    //     this.data = result;
+    //     this.data.forEach(cs=>{
+    //       this.countries.push(cs.country)
+    //     })
+    //   }))
+    // ).subscribe(
+    //   {
+    //     complete : ()=>{
+    //      this.updateValues('Afghanistan')
+    //      this.loading = false;
+    //     }
+    //   }
+    // )
     
     
     
