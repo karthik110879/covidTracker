@@ -1,25 +1,40 @@
 <div class="ui inverted dimmer" [class.active]='loading'>
-    <div class="ui text loader">Loading</div>
+    <div class="ui text loader">Loading..</div>
 </div>
+ 
+<!-- <ngx-loading [show]="loading" ></ngx-loading> -->
+<div class="bg-white text-center">
 
-<div class="jumbotron bg-white text-center">
-    <h1 class="display-3">Corona Covid-19 Tracker Country wice</h1>
+    <h1 class="display-5">COVID-19 Coronavirus pandamic Tracker(Country wice)</h1>
+    <p class="lead">A snapshot of the entire data of a selected country</p>
+
     <hr>
-    <div class="mx-auto">
-        <div class="form-group col-lg-5 mx-auto">
-            <label for="c">Select Country</label>
-            <select name=""  class="form-control" id="c" #input (change)='updateValues(input.value)'>
-                <option id='new' value="{{con}}" *ngFor="let con of countries">{{con}}</option>
-            </select>
-        </div>
+
+</div>
+ 
+
+<div class="mx-auto">
+    <div class="form-group col-lg-5 mx-auto">
+        <label for="c">Select Country</label>
+        <select name="" [(ngModel)]="selectedCountry" class="form-control" id="c" #input (change)='updateValues(input.value)'>
+            <option id='new' value="{{con}}" *ngFor="let con of countries">{{con}}</option>
+        </select>
     </div>
+</div>
+<div  class="bg-light text-center" style="padding:.6rem">
+    <div class="alert alert-warning">
+        <p>NOTE: As of <strong>April 13, 2024</strong>, the Coronavirus Tracker is no longer being updated
+            due to the unfeasibility of providing statistically valid global totals, as the majority of countries have
+            now stopped reporting.</p>
+    </div>
+
     <app-dashboard-card [totalConfirmed]='totalConfirmed'[totalActive]='totalActive' [totalRecovered]='totalRecovered'
     [totalDeaths]='totalDeaths'
     ></app-dashboard-card>
     
     <hr>
 
-    <div class="row">
+    <div class="row" *ngIf="false">
         <div class="col">
             <table class="table">
                 <thead>

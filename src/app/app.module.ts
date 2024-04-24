@@ -13,28 +13,30 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DecimalPipe } from '@angular/common';
 
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    CountriesComponent,
-    DashboardCardComponent,
-    FeedbackComponent,
-    FooterComponent
-  ],
-  imports: [ 
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    GoogleChartsModule,   
-  ],
-  providers: [
-    DecimalPipe
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomeComponent,
+        CountriesComponent,
+        DashboardCardComponent,
+        FeedbackComponent,
+        FooterComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        GoogleChartsModule,
+    ],
+    providers: [
+        DecimalPipe
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
